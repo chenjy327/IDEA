@@ -5,6 +5,8 @@
 
 [![TravisCI Build Status](https://travis-ci.org/likelet/IDEA.svg?branch=master)](https://travis-ci.org/likelet/IDEA)
 [![codebeat badge](https://codebeat.co/badges/c297ab97-01dc-471f-9927-960152caf6d3)](https://codebeat.co/projects/github-com-likelet-idea-master)  
+[![GitHub closed issues](https://img.shields.io/github/issues-closed/likelet/idea.svg?style=flat)](https://github.com/likelet/idea/issues)
+[![GitHub download](https://img.shields.io/github/downloads/likelet/IDEA/v0.1.1/total.svg?style=social)](https://github.com/likelet/IDEA/releases/tag/v0.1.1)
 
 ## Table of content   
 
@@ -34,19 +36,6 @@ To address the above issues, here we introduce the Interactive Differential Expr
 
 The online version can be easily accessed to perform analysis tasks with dataset in low thoughput. However, Limited to remote server resouces, the web page usually stucked while multible user operated parallelly or larger dataset tasks requirement. To solve this, We released an R package that packed the core analysis module for users to run analysis under the R environment locally .  
 
->Before install the IDEA package, please read this markdown file carefully;  
-
-```R
-    if (!require("devtools"))
-      install.packages("devtools")
-    devtools::install_github("likelet/IDEA")
-```
-
-__User should notice that , the latest **shinyBS**  is incompatible with IDEA at present ; Only the exact shingBS  version (0.25) keep the IDEA work smoothly . This is because current shinyBS removed the__ `progressBar()`__function used in IDEA. To install the compatible shinyBS, you can type__  
-
-```R
-        devtools::install_github( "likelet/shinyBS")
-```  
       
 Here list the command to install the related packages manually if devtools failed in installation:  
 
@@ -55,7 +44,7 @@ Here list the command to install the related packages manually if devtools faile
       #dependencies from BIOCONDUCTOR
       bcDep <- c("Biobase", "BiocGenerics", "S4Vectors", "IRanges", "GenomeInfoDb", "GenomicRanges","impute")
       #target from CRAN
-      cTgt <- c("PoissonSeq","FactoMineR","samr","ggplot2","VennDiagram","RobustRankAggreg","shiny","rmarkdown","Cairo","gplots","pheatmap","labeling")
+      cTgt <- c("PoissonSeq","FactoMineR","samr","ggplot2","VennDiagram","RobustRankAggreg","shiny","rmarkdown","Cairo","gplots","pheatmap","labeling","shinyBS")
       #target from BIOCONDUCTOR
       bcTgt <- c("edgeR", "DESeq2","NOISeq")
 
@@ -92,7 +81,6 @@ Here list the command to install the related packages manually if devtools faile
       }
 
       devtools::install_github("shiny-incubator", "rstudio")
-      devtools::install_github( "likelet/shinyBS")
       devtools::install_github("AnalytixWare/ShinySky")
 ```
 Second, to install the latest development build directly from GitHub, run this:(For some reason, we did not release the current version on CRAN or BIOCONDUCTOR site):
@@ -134,9 +122,15 @@ Configure the server network/firewall options like open the shiny port(3838 defa
 
 Access the server's ip address along with port number and enjoy your IDEA analysis trip :).<br/>
 
+<<<<<<< HEAD
 ### Install IDEA with Docker(Recommended) 
 
 We also provide a fast deploy version allowing users install IDEA server version with Docker.  Plz refer to this step by step [tutorial](https://github.com/likelet/IDEA/blob/master/Docker.md).
+=======
+** RUN `IDEA` with Docker
+
+
+>>>>>>> d
 
 ### Developing Environment.  
 
@@ -174,7 +168,7 @@ During the analysis procedure,  you might encounter the following problems due t
 
 Jian Ren, renjian.sysu@gmail.com. 
 
-Qi Zhao, zhaoqi3@mail2.sysu.edu.cn. 
+Qi Zhao, zhaoqi@sysucc.org.cn.
 
 
 ## Credit  
@@ -185,6 +179,7 @@ This software were developed by:
 * [Rucheng Diao](diaorch@mail2.sysu.edu.cn), University of Michigan
 * [Lichen Sun](sunlch@mail2.sysu.edu.cn), Yale University
 * [Yi Shi](shiy26@mail2.sysu.edu.cn), Shanghai Institutes for Biological Sciences
+* [Chengwei Wang](),Sun Yat-sen university 
 
 ## Maintainer  
 Qi Zhao <br/>
