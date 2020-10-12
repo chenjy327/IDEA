@@ -443,15 +443,15 @@ div(
         div(
           class = "boxplot-data fig-data  figure-analysis",
           id = "datafig0",
-          h4("Calculation is in progress, please wait for a while..."),
-          bsProgressBar(
-            "exploretionPrograssbar",
-            value = 0,
-            visible = TRUE,
-            color = "success",
-            striped = TRUE,
-            animate = TRUE
-          )
+          h4("Calculation is in progress, please wait for a while...")
+          # bsProgressBar(
+          #   "exploretionPrograssbar",
+          #   value = 0,
+          #   visible = TRUE,
+          #   color = "success",
+          #   striped = TRUE,
+          #   animate = TRUE
+          # )
           
         ),
         
@@ -477,10 +477,10 @@ div(
           ),
           plotOutput("SamplesBoxplot", height =
                        "100%"),
-          bsPopover(
+          bsTooltip(
             id = "datafig1",
-            title = "Tips",
-            content = "Samples boxplot visualizes normalized count distribution for all samples, displaying expresson distribution in each sample repectively. It supports 11 groups of samples at most.",
+            # title = "Tips",
+            title = "Samples boxplot visualizes normalized count distribution for all samples, displaying expresson distribution in each sample repectively. It supports 11 groups of samples at most.",
             placement = "right",
             trigger = "hover"
           )
@@ -530,10 +530,10 @@ div(
           ),
           plotOutput("densitySampleSelectedPlot", height =
                        "100%"),
-          bsPopover(
+          bsTooltip(
             id = "datafig2",
-            title = "Tips",
-            content = "Stacked density plot visualizes density distribution of features with different reads count, showing overall condition of normailzed counts. Interactive comparison of density distribution between groups is available.",
+            # title = "Tips",
+            title = "Stacked density plot visualizes density distribution of features with different reads count, showing overall condition of normailzed counts. Interactive comparison of density distribution between groups is available.",
             placement = "right",
             trigger = "hover"
           )
@@ -553,10 +553,10 @@ div(
           br(),
           plotOutput("RaioBarplotdPlot", height =
                        "100%"),
-          bsPopover(
+          bsTooltip(
             id = "datafig3",
-            title = "Tips",
-            content = "Ratio bar plot visualizes distribution of counts in each sample using stacked bar plot. Low counts can introduce noise and interfere extraction of differential expression features. It shows featres in each sample by feature of different counts levels, and shows sensitivity, that is, proportion of groups in each sample, as y-axis.",
+            # title = "Tips",
+            title = "Ratio bar plot visualizes distribution of counts in each sample using stacked bar plot. Low counts can introduce noise and interfere extraction of differential expression features. It shows featres in each sample by feature of different counts levels, and shows sensitivity, that is, proportion of groups in each sample, as y-axis.",
             placement = "right",
             trigger = "hover"
           )
@@ -629,10 +629,10 @@ div(
           ),
           plotOutput("S2Sdistanceheatmap", height =
                        "100%"),
-          bsPopover(
+          bsTooltip(
             id = "datafig4",
-            title = "Tips",
-            content = "Heat map of sample distance visualizes the distances between samples by calculating the Euclidean distance from genes in two samples and plotting heat map and hiearchical clustering.",
+            # title = "Tips",
+            title = "Heat map of sample distance visualizes the distances between samples by calculating the Euclidean distance from genes in two samples and plotting heat map and hiearchical clustering.",
             placement = "right",
             trigger = "hover"
           )
@@ -685,10 +685,10 @@ div(
           plotOutput("plotPCAtwoD", height =
                        "100%"),
           #tips
-          bsPopover(
+          bsTooltip(
             id = "datafig5",
-            title = "Tips",
-            content = "Principal component analysis (PCA) result is visualized by scatter plot showing samples as dots colored by their groups/conditions. Respectively, x- and y-axis represent a principal component.",
+            # title = "Tips",
+            title = "Principal component analysis (PCA) result is visualized by scatter plot showing samples as dots colored by their groups/conditions. Respectively, x- and y-axis represent a principal component.",
             placement = "right",
             trigger = "hover"
           )
@@ -731,10 +731,10 @@ div(
           ),
           plotOutput("CorrelatiobScatterPlot", height =
                        "100%"),
-          bsPopover(
+          bsTooltip(
             id = "datafig6",
-            title = "Tips",
-            content = "Correlation analysis visualizes gene expression correlation between two selected samples using scatter plot. To avoid NA, x-axis and y-axis are defined as: log10(NormalizedReadsCount+1). Each fearture is visualized as a single black dot in figure. Spearman correlation is shown in Interactive Option panel.",
+            # title = "Tips",
+            title = "Correlation analysis visualizes gene expression correlation between two selected samples using scatter plot. To avoid NA, x-axis and y-axis are defined as: log10(NormalizedReadsCount+1). Each fearture is visualized as a single black dot in figure. Spearman correlation is shown in Interactive Option panel.",
             placement = "right",
             trigger = "hover"
           )
@@ -778,10 +778,10 @@ div(
           #tags$a(class="glyphicon glyphicon-search icon--fullView"),
           plotOutput("SearchGenePlot", height =
                        "100%"),
-          bsPopover(
+          bsTooltip(
             id = "datafig7",
-            title = "Tips",
-            content = "A histogram with error bar visualizes the comparison result of expression level of a certain feature, selected by user, in different conditions, where x-axis stands for applicable conditions and y-axis stands for normailized reads (or not, decided by user).",
+            # title = "Tips",
+            title = "A histogram with error bar visualizes the comparison result of expression level of a certain feature, selected by user, in different conditions, where x-axis stands for applicable conditions and y-axis stands for normailized reads (or not, decided by user).",
             placement = "right",
             trigger = "hover"
           )
@@ -833,15 +833,15 @@ div(
           div(
             class = "fig-data  figure-analysis",
             
-            h4("Calculation is in progress, please wait for a while..."),
-            bsProgressBar(
-              "DESeqProgressbar",
-              value = 1,
-              visible = FALSE,
-              color = "success",
-              striped = TRUE,
-              animate = TRUE
-            )
+            h4("Calculation is in progress, please wait for a while...")
+            # bsProgressBar(
+            #   "DESeqProgressbar",
+            #   value = 1,
+            #   visible = FALSE,
+            #   color = "success",
+            #   striped = TRUE,
+            #   animate = TRUE
+            # )
           ),
           # DEseq DEtable
           tags$li(
@@ -854,10 +854,10 @@ div(
               dataTableOutput("DEseqTable")
               
             ),
-            bsPopover(
+            bsTooltip(
               id = "DESeqanalysisDiv1",
-              title = "<strong>Header</strong>",
-              content = "<strong style=\"color: green;\" >FeatureID</strong>    Feature identifier<br/><strong style=\"color: green;\" >baseMean</strong>    Mean over all rows<br/><strong style=\"color: green;\" >log2FoldChange</strong> 	  Logarithm (base 2) of the fold change<br/><strong style=\"color: green;\" >lfcSE</strong>	  Standard Error of log2FoldChange<br/><strong style=\"color: green;\" >stat</strong>	  Wald statistic<br/><strong style=\"color: green;\" >pvalue</strong>	  P-value by Wald test or LRT<br/><strong style=\"color: green;\" >padj</strong>	 p-value adjusted for multiple testing with the Benjamini-Hochberg procedure<br/>",
+              # title = "<strong>Header</strong>",
+              title = "<strong style=\"color: green;\" >FeatureID</strong>    Feature identifier<br/><strong style=\"color: green;\" >baseMean</strong>    Mean over all rows<br/><strong style=\"color: green;\" >log2FoldChange</strong> 	  Logarithm (base 2) of the fold change<br/><strong style=\"color: green;\" >lfcSE</strong>	  Standard Error of log2FoldChange<br/><strong style=\"color: green;\" >stat</strong>	  Wald statistic<br/><strong style=\"color: green;\" >pvalue</strong>	  P-value by Wald test or LRT<br/><strong style=\"color: green;\" >padj</strong>	 p-value adjusted for multiple testing with the Benjamini-Hochberg procedure<br/>",
               placement = "right",
               trigger = "hover"
             )
@@ -867,10 +867,10 @@ div(
             div(
               class = "genequery-data fig-data figure-analysis",
               id = "DESeqanalysisDiv2",
-              bsPopover(
+              bsTooltip(
                 id = "DESeqanalysisDiv2",
-                title = "Tips",
-                content = p(
+                # title = "Tips",
+                title = p(
                   "The variance estimation plot is used to visualize the result of dispersion estimates adjustment. Empirical feature-wise (gene-wise) estimates are in black, the fitted estimates are in red, and the final estimates used for testing are in blue, with dispersion as y-axis and mean of normalized counts as x-axis. The outliers of feature-wise (gene-wise) estimates are marked with blue-encircled black dots. The points lying on the bottom indicates they have a dispersion of practically zero or exactly zero."
                 ),
                 placement = "right",
@@ -895,11 +895,10 @@ div(
             div(
               class = "genequery-data fig-data figure-analysis",
               id = "DESeqanalysisDiv3",
-              bsPopover(
+              bsTooltip(
                 id = "DESeqanalysisDiv3",
-                title = "Tips",
-                content = "A MA-Plot can give a quick overview of the differential expression result. 
-                The log2–transformed fold change is plotted on the y-axis and the average count is on the x-axis. The false discovery rate (FDR) threshold can be interactively changed, and the features are colored red if the adjusted p-value is less than the FDR, while other genes are colored black.",
+                # title = "Tips",
+                title = "A MA-Plot can give a quick overview of the differential expression result. The log2-transformed fold change is plotted on the y-axis and the average count is on the x-axis. The false discovery rate (FDR) threshold can be interactively changed, and the features are colored red if the adjusted p-value is less than the FDR, while other genes are colored black.",
                 placement = "right",
                 trigger = "hover"
               ),
@@ -961,10 +960,10 @@ div(
             div(
               class = "genequery-data fig-data figure-analysis",
               id = "DESeqanalysisDiv4",
-              bsPopover(
+              bsTooltip(
                 id = "DESeqanalysisDiv4",
-                title = "Tips",
-                content = "Volcano plot gives an overview of the number of differential expression features. The log2-transformed fold change is on the x-axis, the y-axis represents the –log2(P-value). The threshold of p-value is 0.05, and fold change threshold is 1. Highly differential expressed genes are colored blue, while others are in red.",
+                # title = "Tips",
+                title = "Volcano plot gives an overview of the number of differential expression features. The log2-transformed fold change is on the x-axis, the y-axis represents the-log2(P-value). The threshold of p-value is 0.05, and fold change threshold is 1. Highly differential expressed genes are colored blue, while others are in red.",
                 placement = "right",
                 trigger = "hover"
               ),
@@ -1015,10 +1014,10 @@ div(
             div(
               class = "genequery-data fig-data figure-analysis",
               id = "DESeqanalysisDiv5",
-              bsPopover(
+              bsTooltip(
                 id = "DESeqanalysisDiv5",
-                title = "Tips",
-                content = "Heat map can graphically display the differential expression table, and each square (pixel) represents the value of a feature in a sample. Features are arranged in columns (samples) and rows (features) as in the original data matrix. Number of features to plot, scaling direction, and display of clustering and color key can be interactively changed.",
+                # title = "Tips",
+                title = "Heat map can graphically display the differential expression table, and each square (pixel) represents the value of a feature in a sample. Features are arranged in columns (samples) and rows (features) as in the original data matrix. Number of features to plot, scaling direction, and display of clustering and color key can be interactively changed.",
                 placement = "right",
                 trigger = "hover"
               ),
@@ -1087,10 +1086,10 @@ div(
             div(
               class = "genequery-data fig-data figure-analysis",
               id = "DESeqanalysisDiv6",
-              bsPopover(
+              bsTooltip(
                 id = "DESeqanalysisDiv6",
-                title = "Tips",
-                content = "False discover rate (FDR) distribution plot visualizes distribution of FDR in differential expression test. It uses FDR as x-axis and percentage of different groups of x value as y-axis, and colors significant and not significant groups differently. In DESeq2, Wald test or LRT is adopted, and Benjamini-Hochberg is adopted for multiple testing. Test method is an advanced option of DESeq2 analysis module. FDR threshold can be interactively changed.",
+                # title = "Tips",
+                title = "False discover rate (FDR) distribution plot visualizes distribution of FDR in differential expression test. It uses FDR as x-axis and percentage of different groups of x value as y-axis, and colors significant and not significant groups differently. In DESeq2, Wald test or LRT is adopted, and Benjamini-Hochberg is adopted for multiple testing. Test method is an advanced option of DESeq2 analysis module. FDR threshold can be interactively changed.",
                 placement = "right",
                 trigger = "hover"
               ),
@@ -1137,7 +1136,7 @@ div(
               type = "button",
               class = "close",
               'data-dismiss' = "alert",
-              "×"
+              "x"
             ),
             "In DESeq2 version (1.6.2), ",
             code("Wald"),
@@ -1195,24 +1194,28 @@ div(
           div(
             class = "fig-data  figure-analysis",
             
-            h4("Calculation is in progress, please wait for a while..."),
-            bsProgressBar(
-              "EdgeRProgressbar",
-              value = 1,
-              visible = FALSE,
-              color = "success",
-              striped = TRUE,
-              animate = TRUE
-            )
+            h4("Calculation is in progress, please wait for a while...")
+            # bsProgressBar(
+            #   "EdgeRProgressbar",
+            #   value = 1,
+            #   visible = FALSE,
+            #   color = "success",
+            #   striped = TRUE,
+            #   animate = TRUE
+            # )
           ),
           tags$li(
             div(
               class = "fig-data  figure-analysis",
               id = "edgeRanalysisDiv1",
-              bsPopover(
+              bsTooltip(
                 id = "edgeRanalysisDiv1",
-                title = "<strong>Header</strong>",
-                content = "<strong style=\"color: green;\" >FeatureID</strong>  	Feature identifier<br/><strong style=\"color: green;\" >logFC</strong>		Logarithm (base 10) of the fold change<br/><strong style=\"color: green;\" >logCPM</strong>		Average log2-counts-per-million<br/><strong style=\"color: green;\" >Pvalue</strong>		Two sided p-value of Fisher’s exact test<br/><strong style=\"color: green;\" >FDR</strong>		False discovery rate<br/>",
+                # title = "<strong>Header</strong>",
+                title = "<strong style=\"color: green;\" >FeatureID</strong>  	Feature identifier<br/>
+                <strong style=\"color: green;\" >logFC</strong>	Logarithm (base 10) of the fold change<br/>
+                <strong style=\"color: green;\" >logCPM</strong>Average log2 counts per million<br/>
+                <strong style=\"color: green;\" >Pvalue</strong>		Two sided p value of Fisher's exact test<br/>
+                <strong style=\"color: green;\" >FDR</strong>		False discovery rate<br/>",
                 placement = "right",
                 trigger = "hover"
               ),
@@ -1226,10 +1229,10 @@ div(
             div(
               class = "fig-data  figure-analysis",
               id = "edgeRanalysisDiv2",
-              bsPopover(
+              bsTooltip(
                 id = "edgeRanalysisDiv2",
-                title = "<strong>Header  Information</strong>",
-                content = "<strong style=\"color: green;\" >group</strong>    Sample group information<br/><strong style=\"color: green;\" >lib.size</strong>	  Sum of reads count in each sample <br/><strong style=\"color: green;\" >norm.factors</strong> 	  Scalling factcors of each sample ",
+                # title = "<strong>Header  Information</strong>",
+                title = "<strong style=\"color: green;\" >group</strong>    Sample group information<br/><strong style=\"color: green;\" >lib.size</strong>	  Sum of reads count in each sample <br/><strong style=\"color: green;\" >norm.factors</strong> 	  Scalling factcors of each sample ",
                 placement = "right",
                 trigger = "hover"
               ),
@@ -1242,10 +1245,10 @@ div(
             div(
               class = "fig-data  figure-analysis",
               id = "edgeRanalysisDiv3",
-              bsPopover(
+              bsTooltip(
                 id = "edgeRanalysisDiv3",
-                title = "Tips",
-                content = "The variance estimation plot is used to visualize the tag-wise negative binomial dispersions, thus illustrating relationship of dispersion caused and abundance tags. The tag/feature-wise estimation are shown as black dots, with average log2-transformed normalized-counts as x-axis, and biological coefficient of variation (BCV) as y-axis. The common dispersion, which is estimated across all tags/features, is plotted as a red line parallel to x-axis",
+                # title = "Tips",
+                title = "The variance estimation plot is used to visualize the tag-wise negative binomial dispersions, thus illustrating relationship of dispersion caused and abundance tags. The tag/feature-wise estimation are shown as black dots, with average log2-transformed normalized-counts as x-axis, and biological coefficient of variation (BCV) as y-axis. The common dispersion, which is estimated across all tags/features, is plotted as a red line parallel to x-axis",
                 placement = "right",
                 trigger = "hover"
               ),
@@ -1265,10 +1268,11 @@ div(
             div(
               class = "fig-data  figure-analysis",
               id = "edgeRanalysisDiv4",
-              bsPopover(
+              bsTooltip(
                 id = "edgeRanalysisDiv4",
-                title = "Tips",
-                content = "A MA-Plot can give a quick overview of the distribution of data. <br/><strong style=\"color: green;\" >FDR cutoff is fixed at 0.05</strong> .The log2–transformed fold change is plotted on the y-axis and the average count (normalized by size factors) is on the x-axis. The genes with adjusted p-value less than the FDR are colored red, while other genes are colored black.",
+                # title = "Tips",
+                title = "A MA-Plot can give a quick overview of the distribution of data. <br/>
+                <strong style=\"color: green;\" >FDR cutoff is fixed at 0.05</strong> .The log2 transformed fold change is plotted on the y-axis and the average count (normalized by size factors) is on the x-axis. The genes with adjusted p-value less than the FDR are colored red, while other genes are colored black.",
                 placement = "right",
                 trigger = "hover"
               ),
@@ -1290,10 +1294,10 @@ div(
             div(
               class = "fig-data  figure-analysis",
               id = "edgeRanalysisDiv5",
-              bsPopover(
+              bsTooltip(
                 id = "edgeRanalysisDiv5",
-                title = "Tips",
-                content = "Volcano plot gives an overview of the number of differential expression genes. The log2-transformed fold change is on the x-axis, the y-axis represents the –log2(P-value). The threshold of p-value is 0.05(defaut), and fold change threshold is 1(defaut). Highly differential expressed genes are colored blue, while others are in red.",
+                # title = "Tips",
+                title = "Volcano plot gives an overview of the number of differential expression genes. The log2-transformed fold change is on the x-axis, the y-axis represents the -log2(P-value). The threshold of p-value is 0.05(defaut), and fold change threshold is 1(defaut). Highly differential expressed genes are colored blue, while others are in red.",
                 placement = "right",
                 trigger = "hover"
               ),
@@ -1339,10 +1343,10 @@ div(
             div(
               class = "fig-data  figure-analysis",
               id = "edgeRanalysisDiv6",
-              bsPopover(
+              bsTooltip(
                 id = "edgeRanalysisDiv6",
-                title = "Tips",
-                content = "Heat map of differential expressed genes, top 30(default) DE features shown with lowest false discover rate (FDR) value. Features are arranged in columns (samples) and rows (features) as in the original data matrix. Number of features to plot, scaling direction, and display of clustering and color key can be interactively changed.",
+                # title = "Tips",
+                title = "Heat map of differential expressed genes, top 30(default) DE features shown with lowest false discover rate (FDR) value. Features are arranged in columns (samples) and rows (features) as in the original data matrix. Number of features to plot, scaling direction, and display of clustering and color key can be interactively changed.",
                 placement = "right",
                 trigger = "hover"
               ),
@@ -1412,10 +1416,10 @@ div(
             div(
               class = "fig-data  figure-analysis",
               id = "edgeRanalysisDiv7",
-              bsPopover(
+              bsTooltip(
                 id = "edgeRanalysisDiv7",
-                title = "Tips",
-                content = "False discover rate (FDR) distribution plot visualizes distribution of FDR in DE test. In edgeR, Fisher’s exact test is adopted for differential expression test, and Benjamini-Hochberg procedure for multiple testing. FDR distribution plot uses FDR as x-axis and percentage of different groups of x value as y-axis, and colors significant and not significant groups differently.",
+                # title = "Tips",
+                title = "False discover rate (FDR) distribution plot visualizes distribution of FDR in DE test. In edgeR, Fisher's exact test is adopted for differential expression test, and Benjamini-Hochberg procedure for multiple testing. FDR distribution plot uses FDR as x-axis and percentage of different groups of x value as y-axis, and colors significant and not significant groups differently.",
                 placement = "right",
                 trigger = "hover"
               ),
@@ -1514,24 +1518,24 @@ div(
           div(
             class = "fig-data  figure-analysis",
             
-            h4("Calculation is in progress, please wait for a while..."),
-            bsProgressBar(
-              "NOIseqProgressbar",
-              value = 1,
-              visible = FALSE,
-              color = "success",
-              striped = TRUE,
-              animate = TRUE
-            )
+            h4("Calculation is in progress, please wait for a while...")
+            # bsProgressBar(
+            #   "NOIseqProgressbar",
+            #   value = 1,
+            #   visible = FALSE,
+            #   color = "success",
+            #   striped = TRUE,
+            #   animate = TRUE
+            # )
           ),
           tags$li(
             div(
               class = "fig-data  figure-analysis",
               id = "NOISeqanalysisDiv1",
-              bsPopover(
+              bsTooltip(
                 id = "NOISeqanalysisDiv1",
-                title = "<strong >Header</strong>",
-                content = "<strong style=\"color: green;\" >FeatureID</strong>  Feature identifier<br/><strong style=\"color: green;\" >Mean	Mean</strong> of this condition, available for multiple columns<br/><strong style=\"color: green;\" >Theta</strong>	Differential expression statistics<br/><strong style=\"color: green;\" >Prob</strong>	Probability of differential expression<br/><strong style=\"color: green;\" >Log2FC</strong>	Logarithm (base 2) of the fold change<br/>",
+                # title = "<strong >Header</strong>",
+                title = "<strong style=\"color: green;\" >FeatureID</strong>  Feature identifier<br/><strong style=\"color: green;\" >Mean	Mean</strong> of this condition, available for multiple columns<br/><strong style=\"color: green;\" >Theta</strong>	Differential expression statistics<br/><strong style=\"color: green;\" >Prob</strong>	Probability of differential expression<br/><strong style=\"color: green;\" >Log2FC</strong>	Logarithm (base 2) of the fold change<br/>",
                 placement = "right",
                 trigger = "hover"
               ),
@@ -1543,10 +1547,10 @@ div(
             div(
               class = "fig-data  figure-analysis",
               id = "NOISeqanalysisDiv2",
-              bsPopover(
+              bsTooltip(
                 id = "NOISeqanalysisDiv2",
-                title = "Tips",
-                content = "Heat map of differential expressed genes, top 30(default) DE features shown with lowest false discover rate (FDR) value. Features are arranged in columns (samples) and rows (features) as in the original data matrix. Number of features to plot, scaling direction, and display of clustering and color key can be interactively changed.",
+                # title = "Tips",
+                title = "Heat map of differential expressed genes, top 30(default) DE features shown with lowest false discover rate (FDR) value. Features are arranged in columns (samples) and rows (features) as in the original data matrix. Number of features to plot, scaling direction, and display of clustering and color key can be interactively changed.",
                 placement = "right",
                 trigger = "hover"
               ),
@@ -1615,10 +1619,10 @@ div(
               class = "fig-data  figure-analysis",
               id = "NOISeqanalysisDiv3",
               
-              bsPopover(
+              bsTooltip(
                 id = "NOISeqanalysisDiv3",
-                title = "Tips",
-                content = "<strong style=\"color: green;\" >In NOISeq, probability is not equivalent to p-value.</strong> According to probability calculation process in NOISeq, the higher probability is, the more like that the feature is differentially expressed due to changes in experimental condition. A q-value is given as a threshold to select DE features and is set as 0.8. For more details, please refer to NOISeq publications.",
+                # bstoo = "Tips",
+                title = "<strong style=\"color: green;\" >In NOISeq, probability is not equivalent to p-value.</strong> According to probability calculation process in NOISeq, the higher probability is, the more like that the feature is differentially expressed due to changes in experimental condition. A q-value is given as a threshold to select DE features and is set as 0.8. For more details, please refer to NOISeq publications.",
                 placement = "right",
                 trigger = "hover"
               ),
@@ -1689,7 +1693,7 @@ div(
               type = "button",
               class = "close",
               'data-dismiss' = "alert",
-              "×"
+              "x"
             ),
             " In NOISeq, probability is not equivalent to pvalue, or 1-pvalue."
           ),
@@ -1731,24 +1735,24 @@ div(
           div(
             class = "fig-data  figure-analysis",
             
-            h4("Calculation is in progress, please wait for a while..."),
-            bsProgressBar(
-              "PoissonSeqProgressbar",
-              value = 1,
-              visible = FALSE,
-              color = "success",
-              striped = TRUE,
-              animate = TRUE
-            )
+            h4("Calculation is in progress, please wait for a while...")
+            # bsProgressBar(
+            #   "PoissonSeqProgressbar",
+            #   value = 1,
+            #   visible = FALSE,
+            #   color = "success",
+            #   striped = TRUE,
+            #   animate = TRUE
+            # )
           ),
           tags$li(
             div(
               class = "fig-data  figure-analysis",
               id = "PoissonSeqanalysisDiv1",
-              bsPopover(
+              bsTooltip(
                 id = "PoissonSeqanalysisDiv1",
-                title = "<strong>Header</strong>",
-                content = "<strong style=\"color: green;\" >FeatureID</strong> Feature identifier<br/><strong style=\"color: green;\" >tt</strong> The score statistics of the genes<br/><strong style=\"color: green;\" >p.value</strong> Permutation-based p-values of the genes<br/><strong style=\"color: green;\" >FDR</strong> Estimated false discovery rate<br/><strong style=\"color: green;\" >logFC</strong> Estimated log (base 2) fold change of the genes<br/><strong style=\"color: green;\" ><br/><strong style=\"color: green;\" >",
+                # title = "<strong>Header</strong>",
+                title = "<strong style=\"color: green;\" >FeatureID</strong> Feature identifier<br/><strong style=\"color: green;\" >tt</strong> The score statistics of the genes<br/><strong style=\"color: green;\" >p.value</strong> Permutation-based p-values of the genes<br/><strong style=\"color: green;\" >FDR</strong> Estimated false discovery rate<br/><strong style=\"color: green;\" >logFC</strong> Estimated log (base 2) fold change of the genes<br/><strong style=\"color: green;\" ><br/><strong style=\"color: green;\" >",
                 placement = "right",
                 trigger = "hover"
               ),
@@ -1760,10 +1764,10 @@ div(
             div(
               class = "fig-data  figure-analysis",
               id = "PoissonSeqanalysisDiv2",
-              bsPopover(
+              bsTooltip(
                 id = "PoissonSeqanalysisDiv2",
-                title = "Tips",
-                content = "Heat map of differential expressed genes, top 30(default) DE features shown with lowest false discover rate (FDR) value. Features are arranged in columns (samples) and rows (features) as in the original data matrix. Number of features to plot, scaling direction, and display of clustering and color key can be interactively changed.",
+                # title = "Tips",
+                title = "Heat map of differential expressed genes, top 30(default) DE features shown with lowest false discover rate (FDR) value. Features are arranged in columns (samples) and rows (features) as in the original data matrix. Number of features to plot, scaling direction, and display of clustering and color key can be interactively changed.",
                 placement = "right",
                 trigger = "hover"
               ),
@@ -1835,10 +1839,10 @@ div(
             div(
               class = "fig-data  figure-analysis",
               id = "PoissonSeqanalysisDiv4",
-              bsPopover(
+              bsTooltip(
                 id = "PoissonSeqanalysisDiv4",
-                title = "Tips",
-                content = "Power transformation curve is to estimate model parameters in PoissonSeq. Considering that counts data can be overdispersed, PoissonSeq defines theta as a parameter of power transformation that makes overdispersion of data approaches zero. To estimate theta, a natural cubic spline is applied for 10 pairs of theta-1 and mu, so that given mu, the potential overdispersed data can be realistically modeled.",
+                # title = "Tips",
+                title = "Power transformation curve is to estimate model parameters in PoissonSeq. Considering that counts data can be overdispersed, PoissonSeq defines theta as a parameter of power transformation that makes overdispersion of data approaches zero. To estimate theta, a natural cubic spline is applied for 10 pairs of theta-1 and mu, so that given mu, the potential overdispersed data can be realistically modeled.",
                 placement = "right",
                 trigger = "hover"
               ),
@@ -1860,10 +1864,10 @@ div(
             div(
               class = "fig-data  figure-analysis",
               id = "PoissonSeqanalysisDiv5",
-              bsPopover(
+              bsTooltip(
                 id = "PoissonSeqanalysisDiv5",
-                title = "Tips",
-                content = "False discover rate (FDR) distribution plot visualizes distribution of FDR in DE test. In PoissonSeq, a score statics method is adopted for differential expression test, and a permutation plug-in method for multiple testing. FDR distribution plot uses FDR as x-axis and percentage of different groups of x value as y-axis, and colors significant and not significant groups differently.",
+                # title = "Tips",
+                title = "False discover rate (FDR) distribution plot visualizes distribution of FDR in DE test. In PoissonSeq, a score statics method is adopted for differential expression test, and a permutation plug-in method for multiple testing. FDR distribution plot uses FDR as x-axis and percentage of different groups of x value as y-axis, and colors significant and not significant groups differently.",
                 placement = "right",
                 trigger = "hover"
               ),
@@ -1943,24 +1947,24 @@ div(
           div(
             class = "fig-data  figure-analysis",
             
-            h4("Calculation is in progress, please wait for a while..."),
-            bsProgressBar(
-              "SAMseqProgressbar",
-              value = 1,
-              visible = FALSE,
-              color = "success",
-              striped = TRUE,
-              animate = TRUE
-            )
+            h4("Calculation is in progress, please wait for a while...")
+            # bsProgressBar(
+            #   "SAMseqProgressbar",
+            #   value = 1,
+            #   visible = FALSE,
+            #   color = "success",
+            #   striped = TRUE,
+            #   animate = TRUE
+            # )
           ),
           tags$li(
             div(
               class = "fig-data  figure-analysis",
               id = "SAMseqanalysisDiv1",
-              bsPopover(
+              bsTooltip(
                 id = "SAMseqanalysisDiv1",
-                title = "<strong>Header</strong>",
-                content = "<strong style=\"color: green;\" >FeatureID</strong>  Feature identifier<br/><strong style=\"color: green;\" >Score.d</strong>	The T-statistic* value<br/><strong style=\"color: green;\" >Fold.Change</strong>	The ratio of the two compared value<br/><strong style=\"color: green;\" >q.value</strong>	The lowest FDR at which that gene is called significant",
+                # title = "<strong>Header</strong>",
+                title = "<strong style=\"color: green;\" >FeatureID</strong>  Feature identifier<br/><strong style=\"color: green;\" >Score.d</strong>	The T-statistic* value<br/><strong style=\"color: green;\" >Fold.Change</strong>	The ratio of the two compared value<br/><strong style=\"color: green;\" >q.value</strong>	The lowest FDR at which that gene is called significant",
                 placement = "right",
                 trigger = "hover"
               ),
@@ -1973,10 +1977,10 @@ div(
             div(
               class = "fig-data  figure-analysis",
               id = "SAMseqanalysisDiv2",
-              bsPopover(
+              bsTooltip(
                 id = "SAMseqanalysisDiv2",
-                title = "Tips",
-                content = "Heat map of differential expressed genes, top 30(default) DE features shown with lowest false discover rate (FDR) value. Features are arranged in columns (samples) and rows (features) as in the original data matrix. Number of features to plot, scaling direction, and display of clustering and color key can be interactively changed.",
+                # title = "Tips",
+                title = "Heat map of differential expressed genes, top 30(default) DE features shown with lowest false discover rate (FDR) value. Features are arranged in columns (samples) and rows (features) as in the original data matrix. Number of features to plot, scaling direction, and display of clustering and color key can be interactively changed.",
                 placement = "right",
                 trigger = "hover"
               ),
@@ -2045,10 +2049,10 @@ div(
             div(
               class = "fig-data  figure-analysis",
               id = "SAMseqanalysisDiv3",
-              bsPopover(
+              bsTooltip(
                 id = "SAMseqanalysisDiv3",
-                title = "Tips",
-                content = "A Q-Q plot is a probability plot that visualize comparison between two distributions by plotting quantile (Q) against each other. Expected quantile score of features is taken as x-axis, and observed score as y-axis. A solid line is presented in the plot which is 45 degree and intercepts y-axis at the minimal fold change value. The upper and lower parallel lines are plotted according to a vertical distance of delta, defining SAM threshold rule. Thus features that pass minimal fold changes and are plotted outside of dashed lines are identified as differentially expressed features. Up-regulated features, or features whose observed scores are greater than expected scores, is colored red, while down-regulated features green.",
+                # title = "Tips",
+                title = "A Q-Q plot is a probability plot that visualize comparison between two distributions by plotting quantile (Q) against each other. Expected quantile score of features is taken as x-axis, and observed score as y-axis. A solid line is presented in the plot which is 45 degree and intercepts y-axis at the minimal fold change value. The upper and lower parallel lines are plotted according to a vertical distance of delta, defining SAM threshold rule. Thus features that pass minimal fold changes and are plotted outside of dashed lines are identified as differentially expressed features. Up-regulated features, or features whose observed scores are greater than expected scores, is colored red, while down-regulated features green.",
                 placement = "right",
                 trigger = "hover"
               ),
@@ -2069,10 +2073,10 @@ div(
             div(
               class = "fig-data  figure-analysis",
               id = "SAMseqanalysisDiv4",
-              bsPopover(
+              bsTooltip(
                 id = "SAMseqanalysisDiv4",
-                title = "Tips",
-                content = "False discover rate (FDR) distribution plot visualizes distribution of FDR in DE test. In SAMseq, a Wilcoxon test is adopted for differential expression test, and a permutation plug-in method for multiple testing. FDR distribution plot uses FDR as x-axis and percentage of different groups of x value as y-axis, and colors significant and not significant groups differently.",
+                # title = "Tips",
+                title = "False discover rate (FDR) distribution plot visualizes distribution of FDR in DE test. In SAMseq, a Wilcoxon test is adopted for differential expression test, and a permutation plug-in method for multiple testing. FDR distribution plot uses FDR as x-axis and percentage of different groups of x value as y-axis, and colors significant and not significant groups differently.",
                 placement = "right",
                 trigger = "hover"
               ),
@@ -2169,24 +2173,24 @@ div(
                                 "activeZHAO", "test"),
         div(
           class = "fig-data  figure-analysis",
-          h4("Calculation is in progress, please wait for a while..."),
-          bsProgressBar(
-            "intergretiveProgressbar",
-            value = 1,
-            visible = FALSE,
-            color = "success",
-            striped = TRUE,
-            animate = TRUE
-          )
+          h4("Calculation is in progress, please wait for a while...")
+          # bsProgressBar(
+          #   "intergretiveProgressbar",
+          #   value = 1,
+          #   visible = FALSE,
+          #   color = "success",
+          #   striped = TRUE,
+          #   animate = TRUE
+          # )
         ),
         
         div(
           class = "fig-data  figure-analysis",
           id = "IntergrativeAnalysisDiv1",
-          bsPopover(
+          bsTooltip(
             id = "IntergrativeAnalysisDiv1",
-            title = "Tips",
-            content = "A histogram is adopted to visualize total number of differentially expressed features identified by each package.",
+            # title = "Tips",
+            title = "A histogram is adopted to visualize total number of differentially expressed features identified by each package.",
             placement = "right",
             trigger = "hover"
           ),
@@ -2206,10 +2210,10 @@ div(
         div(
           class = "fig-data  figure-analysis",
           id = "IntergrativeAnalysisDiv2",
-          bsPopover(
+          bsTooltip(
             id = "IntergrativeAnalysisDiv2",
-            title = "Tips",
-            content = "The Venn diagram visualizes the overlapping differential expression (DE) features identified by each package. ",
+            # title = "Tips",
+            title = "The Venn diagram visualizes the overlapping differential expression (DE) features identified by each package. ",
             placement = "right",
             trigger = "hover"
           ),
@@ -2228,10 +2232,10 @@ div(
           class = "fig-data  figure-analysis",
           id = "IntergrativeAnalysisDiv3",
           
-          bsPopover(
+          bsTooltip(
             id = "IntergrativeAnalysisDiv3",
-            title = "<strong>Headers</strong>",
-            content = "<span><strong style=\"color: green;\" >group:</strong>Sample group information<br/><strong style=\"color: green;\" >FeatureID:</strong>Feature identifier<br/><strong style=\"color: green;\" >Package Name:</strong>Identification status of features in corresponding package<br/><div><span class=\"glyphicon glyphicon-ok\">:identified;<span class=\"glyphicon glyphicon-remove\">:unidentified;</div><strong style=\"color: green;\" >Mean:</strong>Mean of feature expression<br/><strong style=\"color: green;\" >LogFC:</strong>Logarithm (base 2) of the fold change<br/><strong style=\"color: red;\" >Score:</strong> Intergration score of rank lists of DE features by robust rank aggregation (RRA)<br/><br/>",
+            # title = "<strong>Headers</strong>",
+            title = "<span><strong style=\"color: green;\" >group:</strong>Sample group information<br/><strong style=\"color: green;\" >FeatureID:</strong>Feature identifier<br/><strong style=\"color: green;\" >Package Name:</strong>Identification status of features in corresponding package<br/><div><span class=\"glyphicon glyphicon-ok\">:identified;<span class=\"glyphicon glyphicon-remove\">:unidentified;</div><strong style=\"color: green;\" >Mean:</strong>Mean of feature expression<br/><strong style=\"color: green;\" >LogFC:</strong>Logarithm (base 2) of the fold change<br/><strong style=\"color: red;\" >Score:</strong> Intergration score of rank lists of DE features by robust rank aggregation (RRA)<br/><br/>",
             placement = "right",
             trigger = "hover"
           ),

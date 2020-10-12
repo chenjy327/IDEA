@@ -428,7 +428,7 @@ div(style="display:inline-block",
             selectInput("condition2", "Condition 2",
                         choices=conditionVector,selected=conditionVector[2])),
         div(style="display:inline-block",
-            bsAlert(inputId = "conditionSelectedAlert"))
+            bsAlert("conditionSelectedAlert"))
     )
     
   })
@@ -2847,20 +2847,20 @@ getPowerCurve<-reactive({
     temptext=getCompairSample()
     if(!is.null(temptext)&&temptext[1]!=temptext[2]){
       values$pairedText<-paste("Perform comparison between conditions: <strong style=\"color:green\">",temptext[1],"</strong> VS <strong style=\"color:green\">",temptext[2],"</strong>")
-      createAlert(session, inputId = "conditionSelectedAlert",
-                  message = values$pairedText,
-                  type = "success",
+      createAlert(session, anchorId = "conditionSelectedAlert",
+                  content = values$pairedText,
+                  style = "success",
                   dismiss = FALSE,
-                  block = FALSE,
+                  # block = FALSE,
                   append = FALSE
       )
     }else{
       values$pairedText<-paste("Invalid condition seleted <strong style=\"color:red\">",temptext[1],"</strong> VS <strong style=\"color:red\">",temptext[2],"</strong> !")
-      createAlert(session, inputId = "conditionSelectedAlert",
-                  message = values$pairedText,
-                  type = "danger",
+      createAlert(session, anchorId = "conditionSelectedAlert",
+                  content = values$pairedText,
+                  style = "danger",
                   dismiss = FALSE,
-                  block = FALSE,
+                  # block = FALSE,
                   append = FALSE
       )
     }
@@ -2884,12 +2884,12 @@ getPowerCurve<-reactive({
       values$normalizedTittle="Raw Data:"
     }
     
-    createAlert(session, inputId = "normalizedMethodAlert",
-                message = values$normalizedText,
+    createAlert(session, anchorId = "normalizedMethodAlert",
+                content = values$normalizedText,
                 title = values$normalizedTittle,
-                type = "info",
+                style = "info",
                 dismiss = TRUE,
-                block = FALSE,
+                # block = FALSE,
                 append = FALSE
     )
   })
@@ -2909,12 +2909,12 @@ getPowerCurve<-reactive({
       values$EdgeRnormalizedTittle="Raw Data:"
     }
     
-    createAlert(session, inputId = "EdgeRnormalizedMethodAlert",
-                message = values$EdgeRnormalizedText,
+    createAlert(session, anchorId = "EdgeRnormalizedMethodAlert",
+                content = values$EdgeRnormalizedText,
                 title = values$EdgeRnormalizedTittle,
-                type = "info",
+                style = "info",
                 dismiss = TRUE,
-                block = FALSE,
+                # block = FALSE,
                 append = FALSE
     )
   })
@@ -2935,12 +2935,12 @@ getPowerCurve<-reactive({
       values$NOISeqNormalizedTittle="Raw Data:"
     }
     
-    createAlert(session, inputId = "NOISeqNormalizedMethodAlert",
-                message = values$NOISeqNormalizedText,
+    createAlert(session, anchorId = "NOISeqNormalizedMethodAlert",
+                content =  values$NOISeqNormalizedText,
                 title = values$NOISeqNormalizedTittle,
-                type = "info",
+                 style = "info",
                 dismiss = TRUE,
-                block = FALSE,
+                # block = FALSE,
                 append = FALSE
     )
   })
@@ -2968,12 +2968,12 @@ observe({
     values$rankAggTittle="Stuart"
   }
   
-  createAlert(session, inputId = "NrankAggMethodAlert",
-              message = values$NrankAggText,
+  createAlert(session, anchorId = "NrankAggMethodAlert",
+              content = values$NrankAggText,
               title = values$rankAggTittle,
-              type = "info",
+              style = "info",
               dismiss = TRUE,
-              block = FALSE,
+              # dism = FALSE,
               append = FALSE
   )
 })
