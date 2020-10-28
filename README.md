@@ -88,7 +88,7 @@ Second, to install the latest development build directly from GitHub, run this:(
 ```R
     if (!require("devtools"))
       install.packages("devtools")
-    devtools::install_github("likelet/IDEA")
+    devtools::install_github("chenjy327/IDEA")
 ```
 The above command can automaticly install the several dependencies which allows users skipping some installation steps; However, the shinyBS package would be latest version which will result in incompatible with IDEA. User can remove it and reinstall the right version to avoid this;
 
@@ -122,15 +122,6 @@ Configure the server network/firewall options like open the shiny port(3838 defa
 
 Access the server's ip address along with port number and enjoy your IDEA analysis trip :).<br/>
 
-<<<<<<< HEAD
-### Install IDEA with Docker(Recommended) 
-
-We also provide a fast deploy version allowing users install IDEA server version with Docker.  Plz refer to this step by step [tutorial](https://github.com/likelet/IDEA/blob/master/Docker.md).
-=======
-** RUN `IDEA` with Docker
-
-
->>>>>>> d
 
 ### Developing Environment.  
 
